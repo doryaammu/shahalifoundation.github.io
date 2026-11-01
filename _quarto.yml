@@ -5,9 +5,13 @@ project:
   resources:
     - images/
     - CNAME
+    - robots.txt
+    - sitemap.xml
+    
 
 website:
   title: "Shah Ali Welfare Foundation"
+  site-url: "https://shahalifoundation.org"
 
   navbar:
     title: false

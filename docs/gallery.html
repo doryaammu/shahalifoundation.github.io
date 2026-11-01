@@ -165,15 +165,15 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="gallery-page">
 <div class="gallery">
-<p><a href="images/pic2.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-1;"><img src="images/pic2.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
-<p><a href="images/pic131.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-2;"><img src="images/pic131.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
-<p><a href="images/pic131a.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-3;"><img src="images/pic131a.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
-<p><a href="images/pic131b.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-4;"><img src="images/pic131b.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
-<p><a href="images/pic131d.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-5;"><img src="images/pic131d.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
-<p><a href="images/pic3.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-6;"><img src="images/pic3.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
-<p><a href="images/pic4.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-7;"><img src="images/pic4.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
-<p><a href="images/pic5.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-8;"><img src="images/pic5.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
-<p><a href="images/pic6.jpg" class="lightbox" data-gallery="gallery" data-glightbox="description: .lightbox-desc-9;"><img src="images/pic6.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic2.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1;" data-gallery="gallery"><img src="images/pic2.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic131.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-2;" data-gallery="gallery"><img src="images/pic131.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic131a.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-3;" data-gallery="gallery"><img src="images/pic131a.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic131b.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-4;" data-gallery="gallery"><img src="images/pic131b.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic131d.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-5;" data-gallery="gallery"><img src="images/pic131d.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic3.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-6;" data-gallery="gallery"><img src="images/pic3.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic4.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-7;" data-gallery="gallery"><img src="images/pic4.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic5.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-8;" data-gallery="gallery"><img src="images/pic5.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic6.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-9;" data-gallery="gallery"><img src="images/pic6.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
 </div>
 </div>
 
@@ -282,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/shahalifoundation\.org");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
