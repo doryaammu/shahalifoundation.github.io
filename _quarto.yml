@@ -4,6 +4,7 @@ project:
   output-dir: docs
   resources:
     - images/
+    - CNAME
 
 website:
   title: "Shah Ali Welfare Foundation"
