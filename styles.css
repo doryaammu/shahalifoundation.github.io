@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
 
 :root {
-  --page-bg: #2b1f47;       /* flat background, all pages */
+  --page-bg: #231939;       /* flat background, all pages */
   --navbar-bg: #2e4e20;     /* top bar */
   --navbar-bg-hover: #243c19;
   --text: #ffffff;          /* all text is white */
@@ -224,6 +224,14 @@ main a:hover {
   font-size: 1.2rem;
 }
 
+.contact-page i {
+  margin-right: 0.4rem;
+}
+
+.contact-page .social a {
+  margin-right: 1.5rem;
+}
+
 /* =========================================
    DONATION PAGE
    Two-line gap between the top bar and the text
@@ -261,6 +269,68 @@ main a:hover {
 }
 
 /* =========================================
+   GALLERY
+   ========================================= */
+
+.gallery-page {
+  padding: 3.6rem clamp(2rem, 5vw, 5rem) 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.gallery p {
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+}
+
+.gallery img:hover {
+  opacity: 0.85;
+}
+
+/* ---- Lightbox: description panel beside the enlarged image ---- */
+
+/* Every box inside the panel: no white background, white text */
+.glightbox-container .gslide-description,
+.glightbox-container .gslide-description *,
+.glightbox-clean .gslide-description,
+.glightbox-clean .gslide-description * {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+/* The panel itself: purple, same as the page */
+.glightbox-container .gslide-description,
+.glightbox-clean .gslide-description {
+  background: var(--page-bg) !important;
+  background-color: var(--page-bg) !important;
+}
+
+.glightbox-container .gslide-desc,
+.glightbox-container .gslide-desc p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.glightbox-container .gslide-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* =========================================
    RESPONSIVE DESIGN
    ========================================= */
 
@@ -284,6 +354,10 @@ main a:hover {
   }
 
   .donation-page {
+    padding-top: 3rem;
+  }
+
+  .gallery-page {
     padding-top: 3rem;
   }
 }

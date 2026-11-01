@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>gallery – Shah Ali Welfare Foundation</title>
+<title>Gallery – Shah Ali Welfare Foundation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -43,6 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-ece42c8223ec2bf36298a08f122c9a68.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -139,13 +142,71 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Gallery</h1>
+</div>
 
 
 
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<div class="gallery-page">
+<div class="gallery">
+<p><a href="images/pic2.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1;" data-gallery="gallery"><img src="images/pic2.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic131.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-2;" data-gallery="gallery"><img src="images/pic131.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic131a.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-3;" data-gallery="gallery"><img src="images/pic131a.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic131b.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-4;" data-gallery="gallery"><img src="images/pic131b.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic131d.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-5;" data-gallery="gallery"><img src="images/pic131d.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic3.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-6;" data-gallery="gallery"><img src="images/pic3.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic4.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-7;" data-gallery="gallery"><img src="images/pic4.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic5.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-8;" data-gallery="gallery"><img src="images/pic5.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+<p><a href="images/pic6.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-9;" data-gallery="gallery"><img src="images/pic6.jpg" class="img-fluid" alt="At the shrine of Shah Ali Baghdadi (R)"></a></p>
+</div>
+</div>
+
+
+<div class="hidden" aria-hidden="true">
+<div class="glightbox-desc lightbox-desc-1">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-2">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-3">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-4">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-5">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-6">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-7">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-8">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+<div class="glightbox-desc lightbox-desc-9">
+<p>At the shrine of Shah Ali Baghdadi (R).</p>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -549,6 +610,38 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"right","loop":true,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

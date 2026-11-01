@@ -2,8 +2,14 @@
 title: ""
 ---
 
-<div class="contact-page">
+::: {.contact-page}
 
-Phone: <a href="tel:+8801718380457">+8801718380457</a>
+Phone: +8801718380457
 
-</div>
+Email: 	shahaliwelfarefd@gmail.com
+
+Follow us on social media:
+
+<a href="https://www.facebook.com/profile.php?id=61596303412690" target="_blank" rel="noopener"><i class="bi bi-facebook"></i> Facebook</a>
+
+:::

@@ -1,0 +1,32 @@
+---
+title: "Gallery"
+lightbox:
+  desc-position: right
+  loop: true
+---
+
+::: {.gallery-page}
+
+::: {.gallery}
+
+![](images/pic2.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+![](images/pic131.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+![](images/pic131a.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+![](images/pic131b.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+![](images/pic131d.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+![](images/pic3.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+![](images/pic4.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+![](images/pic5.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+![](images/pic6.jpg){.lightbox group="gallery" fig-alt="At the shrine of Shah Ali Baghdadi (R)" description="At the shrine of Shah Ali Baghdadi (R)."}
+
+:::
+
+:::
