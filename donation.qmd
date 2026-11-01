@@ -1,0 +1,15 @@
+
+---
+title: ""
+---
+
+::: {.donation-page}
+
+The organization operates through your generous contributions of volunteer service, financial support, gifts-in-kind, and intellectual resources.
+
+Whatever you donate will be used for the services of homeless people living in the premises, stray animals, trees, and for devotees. We welcome donations given freely, with no expectation of receiving anything in return.
+
+Please contact us [here](contact.qmd){.link}
+  in case you want to contribute. 
+
+:::

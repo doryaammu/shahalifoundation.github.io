@@ -1,0 +1,45 @@
+
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - images/
+
+website:
+  title: "Shah Ali Welfare Foundation"
+
+  navbar:
+    title: false
+    left:
+      - href: index.qmd
+        text: Home
+
+      - text: Organization
+        menu:
+          - href: organization.qmd
+            text: About
+          - href: people.qmd
+            text: People
+
+      - href: upcoming.qmd
+        text: Upcoming
+
+      - href: publications.qmd
+        text: Publications
+
+      - href: gallery.qmd
+        text: Gallery
+
+      - href: donation.qmd
+        text: Donation
+
+      - href: contact.qmd
+        text: Contact
+
+format:
+  html:
+    css: styles.css
+    toc: false
+    page-layout: full
+    title-block: false
+    smooth-scroll: false

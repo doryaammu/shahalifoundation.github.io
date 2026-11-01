@@ -1,0 +1,17 @@
+---
+title: "Home"
+---
+
+::: {.homepage}
+
+::: {.intro}
+# Shah Ali Welfare Foundation
+
+It is a place dedicated to bringing people together, supporting meaningful initiatives, and creating positive change in the community.
+:::
+
+::: {.hero-image}
+![Shah Ali Welfare Foundation](images/pic1.jpg)
+:::
+
+:::
