@@ -25,7 +25,7 @@ website:
             text: People
 
       - href: upcoming.qmd
-        text: Upcoming
+        text: Events
 
       - href: publications.qmd
         text: Publications
