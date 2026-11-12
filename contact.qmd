@@ -5,7 +5,7 @@ title: ""
 ::: {.contact-page}
 
 ::: {.contact-item}
-<i class="bi bi-telephone-fill"></i> [+8801718380457](tel:+8801718380457, +8801914818180)
+<i class="bi bi-telephone-fill"></i> [tel:+8801718380457, +8801914818180](tel:+8801718380457, +8801914818180)
 :::
 
 ::: {.contact-item}
