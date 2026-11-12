@@ -140,6 +140,60 @@ ul.task-list li input[type="checkbox"] {
     
 <!-- main -->
 <main class="content column-page" id="quarto-document-content">
+<header class="letterhead">
+  <picture>
+    <source media="(max-width: 900px)" srcset="images/header.png">
+    <img class="lh-img" src="images/header-wide.png" alt="Shah Ali Welfare Foundation">
+  </picture>
+  <nav class="lh-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <a href="#" class="nav-drop-toggle" aria-haspopup="true" aria-expanded="false">Organization <span class="caret">▾</span></a>
+      <div class="nav-menu">
+        <a href="organization.html">About</a>
+        <a href="people.html">People</a>
+      </div>
+    </div>
+    <a href="upcoming.html">Upcoming</a>
+    <a href="publications.html">Publications</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="donation.html">Donation</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<script>
+  (function () {
+    var clean = function (s) { return (s || "").replace(/\.html$/, "").replace(/\/$/, ""); };
+    var here = clean(location.pathname.split("/").pop()) || "index";
+
+    /* Highlight the tab for the current page */
+    document.querySelectorAll(".lh-nav a").forEach(function (a) {
+      if (clean(a.getAttribute("href")) === here) { a.classList.add("active"); }
+    });
+
+    /* Organization dropdown */
+    var dd = document.querySelector(".nav-dropdown");
+    if (!dd) return;
+    var toggle = dd.querySelector(".nav-drop-toggle");
+
+    /* Light up "Organization" when About or People is the current page */
+    if (dd.querySelector(".nav-menu a.active")) { dd.classList.add("active"); }
+
+    /* Tap to open/close (phones); hover works through CSS on desktop */
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      var open = dd.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open);
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dd.contains(e.target)) {
+        dd.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  })();
+</script>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -167,6 +221,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
+<footer class="letterhead-footer">
+  <picture>
+    <source media="(max-width: 900px)" srcset="images/footer.png">
+    <img class="lh-img" src="images/footer-wide.png" alt="Mazar Road, Mirpur-1, Dhaka 1216, Bangladesh. Mobile: 0 1718-380457">
+  </picture>
+</footer>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -1,9 +1,53 @@
+
 ---
 title: ""
 ---
 
-<div class="coming-soon">
+::: {.people-section}
+## Board of Directors
 
-Coming soon.
+| Shaheena Khatun [President]{.position}
+| Md. Surayet Rahman [Vice-President]{.position}
+| Md. Ahsanul Hadi [Vice-President]{.position}
+| Mohammad Hasan Al Kamal [General Secretary]{.position}
+| Md. Nazrul Islam [Joint General Secretary]{.position}
+| Md. Mizanur Rahman Mizi [Treasurer]{.position}
+| Md. Mizanur Rahman (Bhutto) [Assistant Treasurer]{.position}
+| Sheikh Md. Yusuf Reza [Organising Secretary]{.position}
+| Md. Mashum Billah [Secretary for Law and Social Welfare]{.position}
+| Layla Parvin [Secretary for Women and Children’s Affairs]{.position}
+| Saidul Alam [Secretary for Office, Publicity and Publications]{.position}
+| Md. Imran Ashrafi [Secretary for Environment]{.position}
+| Naeem Hasan [Secretary for Religious, Health and Educational Affairs]{.position}
+:::
 
-</div>
+::: {.people-section}
+## Members
+
+| Abdul Malek Mia
+| Asma Sultana
+| A. R. M. Muhiuddin Khan Faruqui
+| Md. Kalim Ahmed
+| Md. Shakil Ahmed
+| Syed Md. Selim
+| Md. Abdullah Al Mamun
+| Md. Iftekhar Alam
+| Md. Shahjahan Mia
+| S. M. Mosharraf Hossain
+| Md. Mizanur Rahman
+| Sahabuddin
+| Abdul Halim
+| M. Jahangir Kabir
+| Ehsan Ullah
+| S. M. Muhibur Rahman
+| G. M. Israfil Islam
+| Hasanul Banna
+| Md. Shahidul Islam Talukdar
+| Shahanaz Parvin Popy
+| Naim Mashreki
+| Rabiul
+| Md. Jalal Howlader
+| Md. Sohag
+| Md. Alam Dewan
+| Ayesha Siddika
+:::

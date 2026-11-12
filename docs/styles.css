@@ -6,11 +6,13 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
 
 :root {
-  --page-bg: #231939;       /* flat background, all pages */
-  --navbar-bg: #2e4e20;     /* top bar */
-  --navbar-bg-hover: #243c19;
-  --text: #ffffff;          /* all text is white */
-  --navbar-height: 66px;
+  --page-bg: #fafafa;        /* website background */
+  --accent: #275f0a;         /* accent: tab bar, links, headings */
+  --accent-dark: #1d4a08;    /* hover shade of the accent */
+  --secondary: #e0b01e;      /* secondary: active tab, highlights */
+  --text: #1b2a16;           /* body text */
+  --paper: #ffffff;          /* letterhead paper (matches the header/footer images) */
+  --side-pad: clamp(2rem, 5vw, 5rem);  /* shared left/right page margin */
 }
 
 * {
@@ -21,86 +23,144 @@
    GLOBAL PAGE SETTINGS
    ========================================= */
 
-html,
-body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  font-family: 'EB Garamond', Georgia, serif;
-  color: var(--text);
+html {
   background: var(--page-bg);
 }
 
-/* =========================================
-   NAVIGATION BAR
-   ========================================= */
-
-.navbar {
-  background-color: var(--navbar-bg) !important;
-  border: none !important;
-  box-shadow: none !important;
+html,
+body {
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
   font-family: 'EB Garamond', Georgia, serif;
-  min-height: var(--navbar-height);
+  color: var(--text);
 }
 
-.navbar .navbar-brand,
-.navbar .nav-link,
-.navbar .navbar-nav .nav-link,
-.navbar .menu-text {
-  color: #ffffff !important;
+/* The whole page is one sheet: header, content, footer */
+body {
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: 0 !important;
+}
+
+/* The default Quarto top bar is replaced by the letterhead tabs */
+#quarto-header,
+#quarto-sidebar,
+#quarto-margin-sidebar {
+  display: none !important;
+}
+
+/* =========================================
+   LETTERHEAD: HEADER IMAGE + TABS (every page)
+   ========================================= */
+
+.letterhead,
+.letterhead-footer {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.lh-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.letterhead picture,
+.letterhead-footer picture {
+  display: block;
+  line-height: 0;
+}
+
+/* Tab bar under the header */
+.lh-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+  margin: 0.6rem clamp(1rem, 4vw, 3rem) 0;
+  padding: 0.55rem 0.9rem;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.lh-nav a {
+  color: #ffffff;
   font-family: 'EB Garamond', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 500;
+  text-decoration: none;
+  padding: 0.25rem 0.95rem;
+  border-radius: 999px;
+  transition: background 0.2s;
 }
 
-.navbar .nav-link:hover,
-.navbar .navbar-brand:hover {
-  color: #ffffff !important;
-  text-decoration: underline;
+.lh-nav a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
 }
 
-/* Active navigation tab */
-.navbar .nav-link.active {
-  color: #ffffff !important;
+.lh-nav a.active {
+  background: var(--secondary);
+  color: var(--text);
   font-weight: 700;
 }
 
-/* Search icon and other icons */
-.navbar .quarto-navbar-tools a,
-.navbar .aa-DetachedSearchButton,
-.navbar .aa-DetachedSearchButtonIcon,
-.navbar .bi {
-  color: #ffffff !important;
+/* ---- Organization dropdown (About / People) ---- */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-/* Dropdown menu */
-.navbar .dropdown-menu {
-  background-color: var(--navbar-bg) !important;
-  border: 1px solid #ffffff;
-  border-radius: 3px;
+.nav-dropdown .caret {
+  font-size: 0.75em;
+  margin-left: 0.2rem;
 }
 
-.navbar .dropdown-item {
-  color: #ffffff !important;
-  font-family: 'EB Garamond', Georgia, serif;
-  font-size: 1.05rem;
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 9rem;
+  padding: 0.4rem;
+  background: var(--accent);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
 }
 
-.navbar .dropdown-item:hover,
-.navbar .dropdown-item:focus {
-  background-color: var(--navbar-bg-hover) !important;
-  color: #ffffff !important;
+.nav-menu a {
+  display: block;
+  margin: 2px 0;
+  text-align: center;
+  white-space: nowrap;
 }
 
-/* Mobile navigation toggler */
-.navbar .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.6);
+/* Opens on hover (desktop) or tap (phones) */
+.nav-dropdown:hover .nav-menu,
+.nav-dropdown.open .nav-menu {
+  display: block;
 }
 
-.navbar .navbar-toggler-icon {
-  filter: brightness(0) invert(1);
+/* "Organization" shows as the active tab on About and People */
+.nav-dropdown.active > .nav-drop-toggle {
+  background: var(--secondary);
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Current page inside the menu: subtle highlight, not the yellow pill */
+.lh-nav .nav-menu a.active {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* =========================================
@@ -114,32 +174,62 @@ header.quarto-title-block {
 }
 
 /* =========================================
-   GENERAL PAGE LAYOUT
+   GENERAL PAGE LAYOUT (edge to edge)
+   The container has no padding so the header and
+   footer images reach the edges. Each page's own
+   wrapper class (below) adds the side margins.
    ========================================= */
 
-#quarto-content,
-main.content,
 .page-columns,
-.page-layout-full {
+#quarto-content,
+main.content {
+  display: block !important;
   width: 100%;
   max-width: none !important;
   min-height: 0;
   height: auto;
   margin: 0 !important;
   padding: 0 !important;
-  background: var(--page-bg);
+  background: transparent;
 }
 
-/* General typography: everything white */
+#quarto-content {
+  flex: 1 0 auto;
+  position: relative;
+  isolation: isolate;
+  min-height: 480px;
+}
+
+/* Faded logo behind the text on every page */
+#quarto-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("images/watermark.png") 50% 2.5rem / min(70%, 440px) no-repeat;
+  opacity: 0.08;           /* raise for darker, lower for lighter */
+  pointer-events: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* General typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'EB Garamond', Georgia, serif;
-  color: #ffffff;
+  color: var(--accent);
   font-weight: 500;
 }
 
-p, li, div, span, td, th, a {
+p, li, div, span, td, th {
   font-family: 'EB Garamond', Georgia, serif;
-  color: #ffffff;
+  color: var(--text);
 }
 
 p {
@@ -147,71 +237,43 @@ p {
 }
 
 /* Links inside page content */
-main a,
-.contact-page a,
-.donation-page a {
-  color: #ffffff;
+main a {
+  font-family: 'EB Garamond', Georgia, serif;
+  color: var(--accent);
   text-decoration: underline;
 }
 
 main a:hover {
-  color: #ffffff;
-  opacity: 0.8;
+  color: var(--accent-dark);
 }
 
 /* =========================================
-   HOMEPAGE
+   HOME PAGE: writing space
    ========================================= */
 
-.homepage {
-  display: grid;
-  grid-template-columns: 28% 72%;
-  width: 100%;
-  margin-top: 1rem;
-  height: calc(100vh - var(--navbar-height) - 1rem);
-  height: calc(100dvh - var(--navbar-height) - 1rem);
-  overflow: hidden;
-  align-items: stretch;
+.home-page {
+  min-height: 360px;
+  padding: 2.5rem clamp(1.25rem, 5vw, 3.5rem);
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: clamp(1.5rem, 3vw, 3.5rem);
-  min-width: 0;
+.lead-text {
+  margin-bottom: 1.5cm;    /* gap between the motto and the paragraph */
 }
 
-.intro h1 {
-  margin: 0 0 1rem;
-  color: #ffffff;
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 1.15;
+.lead-text p {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.35rem;
+  line-height: 1.6;
 }
 
-.intro p {
-  margin: 0;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.hero-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+/* Paragraph under the motto: 1pt smaller than the motto */
+.about-text,
+.about-text p,
+.home-page > p {
+  font-size: calc(1.35rem - 1pt);
+  line-height: 1.6;
 }
 
 /* =========================================
@@ -219,32 +281,129 @@ main a:hover {
    ========================================= */
 
 .contact-page {
-  padding: clamp(2rem, 5vw, 5rem);
-  color: #ffffff;
+  padding: clamp(2rem, 5vw, 5rem) var(--side-pad);
   font-size: 1.2rem;
 }
 
-.contact-page i {
-  margin-right: 0.4rem;
+.contact-page > :first-child {
+  margin-top: 0;
 }
 
-.contact-page .social a {
-  margin-right: 1.5rem;
+/* One row per contact item: icon + text */
+.contact-page .contact-item p {
+  margin: 0 0 1rem;
+  overflow-wrap: anywhere;   /* long email never runs off the screen */
+}
+
+/* Icons (Bootstrap Icons) */
+.contact-page i {
+  display: inline-block;
+  width: 1.6em;
+  margin-right: 0.3rem;
+  text-align: center;
+  font-size: 1.15em;
+  color: var(--accent);
+}
+
+/* Links in the contact page */
+.contact-page a {
+  text-decoration: none;
+}
+
+.contact-page a:hover {
+  text-decoration: underline;
+}
+
+.contact-page .social-heading p {
+  margin: 1.8rem 0 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 /* =========================================
    DONATION PAGE
-   Two-line gap between the top bar and the text
+   Two-line gap between the tabs and the text
    ========================================= */
 
 .donation-page {
-  padding: 3.6rem clamp(2rem, 5vw, 5rem) 2rem;  /* top = about two lines */
-  color: #ffffff;
+  padding: 3.6rem var(--side-pad) 2rem;  /* top = about two lines */
   font-size: 1.2rem;
 }
 
 .donation-page > :first-child {
   margin-top: 0;
+}
+
+/* =========================================
+   PEOPLE & UPCOMING PAGES
+   Side padding so headings, lines, text and
+   images don't hug the left edge
+   ========================================= */
+
+.people-section,
+.event-section,
+.org-section {
+  padding: 1.5rem var(--side-pad) 1rem;
+  font-size: 1.2rem;
+}
+
+/* People page: everything starts at least 2 inches from the left edge */
+.people-section {
+  padding-left: max(2in, var(--side-pad));
+}
+
+/* First element: no extra gap on top of the padding */
+.people-section > :first-child,
+.event-section > :first-child,
+.org-section > :first-child {
+  margin-top: 0;
+}
+
+/* Headings (Board of Directors, Members, Upcoming Event, Recent Event) */
+.people-section h2,
+.event-section h2,
+.org-section h2 {
+  margin-bottom: 1rem;
+}
+
+/* Names listed as line blocks: tidy spacing between lines */
+.people-section .line-block {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+
+/* Position text beside each name:
+   italic, 1.5pt smaller, after a " | " separator */
+.people-section .position {
+  font-style: italic;
+  font-size: calc(1em - 1.5pt);
+}
+
+.people-section .position::before {
+  content: "| ";
+  font-style: normal;      /* keeps the bar upright; remove to make it italic too */
+}
+
+/* Organization page: comfortable spacing in the numbered lists */
+.org-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.org-section ol ol {
+  margin-top: 0.5rem;
+}
+
+/* Event invitation images: stay inside the margins, centered */
+.event-section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.event-section figure {
+  margin: 0;
 }
 
 /* =========================================
@@ -255,12 +414,11 @@ main a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 75vh;
+  min-height: 50vh;
   width: 100%;
   font-family: 'EB Garamond', Georgia, serif;
   font-size: 1.5rem;
   font-weight: 400;
-  color: #ffffff;
   text-align: center;
 }
 
@@ -273,7 +431,7 @@ main a:hover {
    ========================================= */
 
 .gallery-page {
-  padding: 3.6rem clamp(2rem, 5vw, 5rem) 2rem;
+  padding: 3.6rem var(--side-pad) 2rem;
 }
 
 .gallery-page .gallery {
@@ -307,18 +465,18 @@ main a:hover {
 
 /* ---- Lightbox: description panel beside the enlarged image ---- */
 
-/* Every box inside the panel: no white background, white text */
+/* Every box inside the panel: no stray background, dark text */
 .glightbox-container .gslide-description,
 .glightbox-container .gslide-description *,
 .glightbox-clean .gslide-description,
 .glightbox-clean .gslide-description * {
   background: transparent !important;
   background-color: transparent !important;
-  color: #ffffff !important;
+  color: var(--text) !important;
   font-family: 'EB Garamond', Georgia, serif;
 }
 
-/* The panel itself: purple, same as the page */
+/* The panel itself: same light color as the page */
 .glightbox-container .gslide-description,
 .glightbox-clean .gslide-description {
   background: var(--page-bg) !important;
@@ -341,30 +499,41 @@ main a:hover {
    ========================================= */
 
 @media (max-width: 700px) {
-  .homepage {
-    grid-template-columns: 38% 62%;
-    margin-top: 0.5rem;
-    height: calc(100dvh - var(--navbar-height) - 0.5rem);
+  .lh-nav {
+    border-radius: 18px;
   }
 
-  .intro {
-    padding: 1rem;
+  .lh-nav a {
+    font-size: 1rem;
+    padding: 0.25rem 0.7rem;
   }
 
-  .intro h1 {
-    font-size: 1.25rem;
+  .home-page {
+    padding: 1.5rem 1rem;
   }
 
-  .intro p {
-    font-size: 0.9rem;
+  .lead-text p {
+    font-size: 1.1rem;
   }
 
-  .donation-page {
-    padding-top: 3rem;
+  .about-text,
+  .about-text p,
+  .home-page > p {
+    font-size: calc(1.1rem - 1pt);
   }
 
+  .donation-page,
   .gallery-page {
     padding-top: 3rem;
+  }
+
+  /* People & Upcoming: slightly smaller text, tighter side margins */
+  .people-section,
+  .event-section,
+  .org-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 1.1rem;
   }
 }
 

@@ -2,8 +2,14 @@
 title: ""
 ---
 
-<div class="coming-soon">
+::: {.event-section}
+## Upcoming Event
 
-Coming soon.
+![](images/event2.png){fig-alt="Invitation letter for the upcoming event"}
+:::
 
-</div>
+::: {.event-section}
+## Recent Event
+
+![](images/event1.png){fig-alt="Invitation letter for the recent event"}
+:::

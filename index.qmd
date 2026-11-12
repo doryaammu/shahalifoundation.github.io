@@ -2,16 +2,18 @@
 title: "Home"
 ---
 
-::: {.homepage}
+```{=html}
+<h1 class="visually-hidden">Shah Ali Welfare Foundation</h1>
+```
 
-::: {.intro}
-# Shah Ali Welfare Foundation
+::: {.home-page}
 
-It is a place dedicated to bringing people together, supporting meaningful initiatives, and creating positive change in the community.
+::: {.lead-text}
+"For the welfare of people, for the protection of nature, on the path to Allah's pleasure"
 :::
 
-::: {.hero-image}
-![Shah Ali Welfare Foundation](images/pic1.jpg)
+::: {.about-text}
+This is a non-political, non-profit, non-communal, ideology-based, social, non-governmental voluntary organization dedicated to serving distressed humanity. It will work for the welfare of all humanity, the establishment of universal brotherhood, and the establishment of overall peace and harmony. It will also promote the contributions of the saints (Awliya) and work to improve the lives of destitute people.
 :::
 
 :::

@@ -140,17 +140,119 @@ ul.task-list li input[type="checkbox"] {
     
 <!-- main -->
 <main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<header class="letterhead">
+  <picture>
+    <source media="(max-width: 900px)" srcset="images/header.png">
+    <img class="lh-img" src="images/header-wide.png" alt="Shah Ali Welfare Foundation">
+  </picture>
+  <nav class="lh-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown">
+      <a href="#" class="nav-drop-toggle" aria-haspopup="true" aria-expanded="false">Organization <span class="caret">▾</span></a>
+      <div class="nav-menu">
+        <a href="organization.html">About</a>
+        <a href="people.html">People</a>
+      </div>
+    </div>
+    <a href="upcoming.html">Upcoming</a>
+    <a href="publications.html">Publications</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="donation.html">Donation</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<script>
+  (function () {
+    var clean = function (s) { return (s || "").replace(/\.html$/, "").replace(/\/$/, ""); };
+    var here = clean(location.pathname.split("/").pop()) || "index";
+
+    /* Highlight the tab for the current page */
+    document.querySelectorAll(".lh-nav a").forEach(function (a) {
+      if (clean(a.getAttribute("href")) === here) { a.classList.add("active"); }
+    });
+
+    /* Organization dropdown */
+    var dd = document.querySelector(".nav-dropdown");
+    if (!dd) return;
+    var toggle = dd.querySelector(".nav-drop-toggle");
+
+    /* Light up "Organization" when About or People is the current page */
+    if (dd.querySelector(".nav-menu a.active")) { dd.classList.add("active"); }
+
+    /* Tap to open/close (phones); hover works through CSS on desktop */
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      var open = dd.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open);
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dd.contains(e.target)) {
+        dd.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  })();
+</script>
 
 
 
 
-<div class="coming-soon">
-<p>Coming soon.</p>
-</div>
+<section id="board-of-directors" class="level2 people-section">
+<h2 class="anchored" data-anchor-id="board-of-directors">Board of Directors</h2>
+<div class="line-block">Shaheena Khatun <span class="position">President</span><br>
+Md. Surayet Rahman <span class="position">Vice-President</span><br>
+Md. Ahsanul Hadi <span class="position">Vice-President</span><br>
+Mohammad Hasan Al Kamal <span class="position">General Secretary</span><br>
+Md. Nazrul Islam <span class="position">Joint General Secretary</span><br>
+Md. Mizanur Rahman Mizi <span class="position">Treasurer</span><br>
+Md. Mizanur Rahman (Bhutto) <span class="position">Assistant Treasurer</span><br>
+Sheikh Md. Yusuf Reza <span class="position">Organising Secretary</span><br>
+Md. Mashum Billah <span class="position">Secretary for Law and Social Welfare</span><br>
+Layla Parvin <span class="position">Secretary for Women and Children’s Affairs</span><br>
+Saidul Alam <span class="position">Secretary for Office, Publicity and Publications</span><br>
+Md. Imran Ashrafi <span class="position">Secretary for Environment</span><br>
+Naeem Hasan <span class="position">Secretary for Religious, Health and Educational Affairs</span></div>
+</section>
+<section id="members" class="level2 people-section">
+<h2 class="anchored" data-anchor-id="members">Members</h2>
+<div class="line-block">Abdul Malek Mia<br>
+Asma Sultana<br>
+A. R. M. Muhiuddin Khan Faruqui<br>
+Md. Kalim Ahmed<br>
+Md. Shakil Ahmed<br>
+Syed Md. Selim<br>
+Md. Abdullah Al Mamun<br>
+Md. Iftekhar Alam<br>
+Md. Shahjahan Mia<br>
+S. M. Mosharraf Hossain<br>
+Md. Mizanur Rahman<br>
+Sahabuddin<br>
+Abdul Halim<br>
+M. Jahangir Kabir<br>
+Ehsan Ullah<br>
+S. M. Muhibur Rahman<br>
+G. M. Israfil Islam<br>
+Hasanul Banna<br>
+Md. Shahidul Islam Talukdar<br>
+Shahanaz Parvin Popy<br>
+Naim Mashreki<br>
+Rabiul<br>
+Md. Jalal Howlader<br>
+Md. Sohag<br>
+Md. Alam Dewan<br>
+Ayesha Siddika</div>
+</section>
 
 
 
 </main> <!-- /main -->
+<footer class="letterhead-footer">
+  <picture>
+    <source media="(max-width: 900px)" srcset="images/footer.png">
+    <img class="lh-img" src="images/footer-wide.png" alt="Mazar Road, Mirpur-1, Dhaka 1216, Bangladesh. Mobile: 0 1718-380457">
+  </picture>
+</footer>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

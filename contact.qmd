@@ -4,12 +4,20 @@ title: ""
 
 ::: {.contact-page}
 
-Phone: +8801718380457
+::: {.contact-item}
+<i class="bi bi-telephone-fill"></i> [+8801718380457](tel:+8801718380457)
+:::
 
-Email: 	shahaliwelfarefd@gmail.com
+::: {.contact-item}
+<i class="bi bi-envelope-fill"></i> [shahaliwelfarefd@gmail.com](mailto:shahaliwelfarefd@gmail.com)
+:::
 
+::: {.social-heading}
 Follow us on social media:
+:::
 
+::: {.contact-item}
 <a href="https://www.facebook.com/profile.php?id=61596303412690" target="_blank" rel="noopener"><i class="bi bi-facebook"></i> Facebook</a>
+:::
 
 :::
