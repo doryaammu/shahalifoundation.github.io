@@ -3,13 +3,11 @@ title: ""
 ---
 
 ::: {.event-section}
-## Upcoming Event
-
-![](images/event2.png){fig-alt="Invitation letter for the upcoming event"}
-:::
-
-::: {.event-section}
 ## Recent Event
 
+::: {layout-ncol=2}
+![](images/event2.png){fig-alt="Invitation letter for the upcoming event"}
+
 ![](images/event1.png){fig-alt="Invitation letter for the recent event"}
+:::
 :::

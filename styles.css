@@ -394,7 +394,20 @@ main a:hover {
   margin-top: 0.5rem;
 }
 
-/* Event invitation images: stay inside the margins, centered */
+
+/* Event invitation images: two side by side, centered, inside the margins */
+.event-section .quarto-layout-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.event-section .quarto-layout-cell {
+  flex: 1 1 0;
+  min-width: 0;          /* lets the images shrink instead of overflowing */
+}
+
 .event-section img {
   display: block;
   max-width: 100%;
@@ -527,13 +540,22 @@ main a:hover {
     padding-top: 3rem;
   }
 
-  /* People & Upcoming: slightly smaller text, tighter side margins */
   .people-section,
   .event-section,
   .org-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     font-size: 1.1rem;
+  }
+
+  /* Stack the two event images on phones */
+  .event-section .quarto-layout-row {
+    flex-direction: column;
+  }
+
+  .event-section .quarto-layout-cell {
+    width: 100% !important;
+    flex-basis: auto !important;
   }
 }
 
